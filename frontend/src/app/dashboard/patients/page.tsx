@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { api } from "@/services/api";
-import { isAuthenticated } from "@/utils/auth";
+import { isAuthenticated, logout } from "@/utils/auth";
 
 interface Patient {
   id: number;
@@ -90,6 +90,10 @@ const resetForm = () => {
   return (
     <div>
       <h1>Pacientes</h1>
+      
+      <button onClick={logout}>
+        Cerrar Sesión
+      </button>
 
       <h2>{editingId ? "Editar Paciente" : "Nuevo Paciente"}</h2>
 
@@ -115,6 +119,8 @@ const resetForm = () => {
             onChange={(e) => setMotivo(e.target.value)}
             required
         />
+
+
 
         <button type="submit">
             {editingId ? "Actualizar" : "Crear"}

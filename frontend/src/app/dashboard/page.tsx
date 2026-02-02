@@ -2,7 +2,8 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { isAuthenticated } from "@/utils/auth";
+import { isAuthenticated, logout } from "@/utils/auth";
+
 
 export default function DashboardPage() {
   const router = useRouter();
@@ -19,6 +20,10 @@ export default function DashboardPage() {
 
       <button onClick={() => router.push("/dashboard/patients")}>
         Pacientes
+      </button>
+
+      <button onClick= {logout}>
+        Cerrar Sesión
       </button>
     </div>
   );
