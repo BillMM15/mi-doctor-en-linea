@@ -15,7 +15,7 @@ export default function DashboardPage() {
   }, []);
 
   return (
-    <div>
+    <div className="container">
       <h1>Bienvenido al Sistema Mi Doctor en Línea</h1>
 
       <button onClick={() => router.push("/dashboard/patients")}>

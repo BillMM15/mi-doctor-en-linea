@@ -87,77 +87,87 @@ const resetForm = () => {
 
 
 
-  return (
-    <div>
-      <h1>Pacientes</h1>
-      
-      <button onClick={logout}>
-        Cerrar Sesión
+return (
+  <div className="container">
+    {/* Navegación superior */}
+    <div style={{ marginBottom: "20px" }}>
+      <button onClick={() => router.push("/dashboard")}>
+        Volver al Inicio
       </button>
 
-      <h2>{editingId ? "Editar Paciente" : "Nuevo Paciente"}</h2>
+      <button
+        onClick={() => {
+          logout();
+          router.push("/login");
+        }}
+      >
+        Cerrar sesión
+      </button>
+    </div>
+
+    <h1>Pacientes</h1>
+
+    <h2>{editingId ? "Editar Paciente" : "Nuevo Paciente"}</h2>
 
     <form onSubmit={handleSubmit}>
-        <input
-            placeholder="Nombre"
-            value={nombre}
-            onChange={(e) => setNombre(e.target.value)}
-            required
-        />
+      <input
+        placeholder="Nombre"
+        value={nombre}
+        onChange={(e) => setNombre(e.target.value)}
+        required
+      />
 
-        <input
-            type="number"
-            placeholder="Edad"
-            value={edad}
-            onChange={(e) => setEdad(e.target.value)}
-            required
-        />
+      <input
+        type="number"
+        placeholder="Edad"
+        value={edad}
+        onChange={(e) => setEdad(e.target.value)}
+        required
+      />
 
-        <input
-            placeholder="Motivo de consulta"
-            value={motivo}
-            onChange={(e) => setMotivo(e.target.value)}
-            required
-        />
+      <input
+        placeholder="Motivo de consulta"
+        value={motivo}
+        onChange={(e) => setMotivo(e.target.value)}
+        required
+      />
 
+      <button type="submit">
+        {editingId ? "Actualizar" : "Crear"}
+      </button>
 
-
-        <button type="submit">
-            {editingId ? "Actualizar" : "Crear"}
+      {editingId && (
+        <button type="button" onClick={resetForm}>
+          Cancelar
         </button>
+      )}
+    </form>
 
-        {editingId && (
-            <button type="button" onClick={resetForm}>
-            Cancelar
-            </button>
-        )}
-        </form>
-
-      <table border={1}>
-        <thead>
-          <tr>
-            <th>Nombre</th>
-            <th>Edad</th>
-            <th>Motivo</th>
-            <th>Acciones</th>
+    <table border={1}>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Edad</th>
+          <th>Motivo</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {patients.map((p) => (
+          <tr key={p.id}>
+            <td>{p.nombre}</td>
+            <td>{p.edad}</td>
+            <td>{p.motivo_consulta}</td>
+            <td>
+              <button onClick={() => editPatient(p)}>Editar</button>
+              <button onClick={() => deletePatient(p.id)}>
+                Eliminar
+              </button>
+            </td>
           </tr>
-        </thead>
-        <tbody>
-          {patients.map((p) => (
-            <tr key={p.id}>
-              <td>{p.nombre}</td>
-              <td>{p.edad}</td>
-              <td>{p.motivo_consulta}</td>
-              <td>
-                <button onClick={() => editPatient(p)}>Editar</button>
-                <button onClick={() => deletePatient(p.id)}>
-                  Eliminar
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
+        ))}
+      </tbody>
+    </table>
+  </div>
+);
 }
