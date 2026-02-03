@@ -110,11 +110,13 @@ Password: 123456
 5. Ingresar en: http://localhost:3000/login
 6. Usar el usuario de prueba para iniciar sesión
 
+
 ### Notas Finales
 El sistema utiliza JWT para autenticación.
 Las rutas del dashboard están protegidas.
 El diseño es simple y funcional, enfocado en claridad y flujo.
 El archivo .env no se incluye en el repositorio por seguridad.
+
 
 
 
