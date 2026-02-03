@@ -39,6 +39,16 @@ export default function LoginPage() {
     <div className="container">
       <h1>Login</h1>
 
+      <img
+        src="/Logo_MiDocEnLinea.png"
+        alt="Mi Doc En Línea"
+        style={{ 
+          width: "140px", 
+          margin:"0 auto 20px",
+          display: "block",
+        }}
+      />
+
       <form onSubmit={handleSubmit}>
         <input
           placeholder="Email"

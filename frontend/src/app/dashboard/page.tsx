@@ -16,7 +16,20 @@ export default function DashboardPage() {
 
   return (
     <div className="container">
-      <h1>Bienvenido al Sistema Mi Doctor en Línea</h1>
+    <div
+    style={{
+      display: "flex",
+      alignItems: "center",
+      marginBottom: "20px",
+    }}
+  >
+    <img
+      src="/Logo_MiDocEnLinea.png"
+      alt="Mi Doctor en Línea"
+      style={{ width: "90px", marginRight: "10px" }}
+    />
+    <h1>Bienvenido al Sistema Mi Doctor en Línea</h1>
+  </div>
 
       <button onClick={() => router.push("/dashboard/patients")}>
         Pacientes
