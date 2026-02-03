@@ -34,7 +34,7 @@ consumo de APIs y operaciones CRUD utilizando un stack moderno.
 - Eliminar paciente
 
 ## Configuración Backend
-```bash
+bash
 cd backend
 npm install
 
