@@ -1,11 +1,13 @@
 # Mi Doctor en Línea
 
-Sistema hospitalario simplificado desarrollado como prueba técnica para prácticas profesionales.
-El proyecto simula una parte básica de un sistema clínico, permitiendo la autenticación de usuarios
+Sistema hospitalario simplificado desarrollado como prueba técnica para prácticas profesionales.  
+El proyecto simula una parte básica de un sistema clínico, permitiendo la autenticación de usuarios  
 y la gestión de pacientes mediante un flujo completo frontend–backend.
 
-El objetivo principal es demostrar el manejo de autenticación con JWT, protección de rutas,
+El objetivo principal es demostrar el manejo de autenticación con JWT, protección de rutas,  
 consumo de APIs y operaciones CRUD utilizando un stack moderno.
+
+---
 
 ## Tecnologías Utilizadas
 
@@ -20,6 +22,8 @@ consumo de APIs y operaciones CRUD utilizando un stack moderno.
 - Next.js
 - TypeScript
 
+---
+
 ## Funcionalidades
 
 ### Autenticación
@@ -33,72 +37,84 @@ consumo de APIs y operaciones CRUD utilizando un stack moderno.
 - Editar paciente
 - Eliminar paciente
 
+---
+
+## Clonar el Repositorio
+
+Clonar el repositorio desde GitHub:
+
+```bash
+git clone https://github.com/BillMM15/mi-doctor-en-linea.git
+cd mi-doctor-en-linea
+```
+
 ## Configuración Backend
-bash
-cd backend
-npm install
+```bash
+ cd backend 
+ npm install
+ ```
 
-- Variables de Entorno
-Crear un archivo .env en /backend:
-PORT=3001
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=
-DB_NAME=mi_doctor_db
-JWT_SECRET=super_secret_key
+Variables de Entorno Crear un archivo .env en /backend:
 
-- Ejecutar el backend
+ PORT=3001 
+ DB_HOST=localhost 
+ DB_USER=root DB_PASSWORD= 
+ DB_NAME=mi_doctor_db 
+ JWT_SECRET=super_secret_key
+
+
+## Ejecutar el backend 
+```bash
 npm run dev
+```
 
-- El backen correrá en:
-http://localhost:3001
+El backen correrá en: http://localhost:3001
 
 ## Configuración Frontend
-- Instalar dependencias
-cd frontend
-npm install
+Instalar dependencias
+```bash
+ cd frontend
+ npm install
+```
 
-- Ejecutar frontend
-npm run dev
+Ejecutar frontend
+```bash
+ npm run dev
+```
 
-- El frontend correrá en:
-http://localhost:3000
+El frontend correrá en: http://localhost:3000
 
-## Base de Datos
-
+### Base de Datos
 El proyecto utiliza MySQL.
 
-### Importar la base de datos
+## Importar la base de datos
 1. Abrir XAMPP e iniciar Apache y MySQL
 2. Ir a http://localhost/phpmyadmin
-3. Crear una base de datos llamada:
-   mi_doctor_en_linea
-4. Importar el archivo:
-   database/mi_doctor_db.sql
+3. Crear una base de datos llamada: mi_doctor_en_linea
+4. Importar el archivo: database/mi_doctor_db.sql
 
-Usuario: root  
+Usuario: root
 Contraseña: (vacía)
 
-
-
-## Usuario de Prueba
+### Usuario de Prueba
 Para facilitar la evaluación del sistema, se incluye un usuario de prueba en la base de datos:
 
-- Email: isaac@test.com  
-- Password: 123456
+Email: isaac@test.com
+Password: 123456
 
-## Cómo probar el sistema
-
+### Cómo probar el sistema
 1. Levantar MySQL y Apache en XAMPP
 2. Importar la base de datos
 3. Ejecutar el backend
 4. Ejecutar el frontend
-5. Ingresar en:
-   http://localhost:3000/login
+5. Ingresar en: http://localhost:3000/login
 6. Usar el usuario de prueba para iniciar sesión
 
-## Notas Finales
-- El sistema utiliza JWT para autenticación.
-- Las rutas del dashboard están protegidas.
-- El diseño es simple y funcional, enfocado en claridad y flujo.
-- El archivo `.env` no se incluye en el repositorio por seguridad.
+### Notas Finales
+El sistema utiliza JWT para autenticación.
+Las rutas del dashboard están protegidas.
+El diseño es simple y funcional, enfocado en claridad y flujo.
+El archivo .env no se incluye en el repositorio por seguridad.
+
+
+
